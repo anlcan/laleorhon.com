@@ -1,0 +1,68 @@
+# llms.txt — Guidance for AI crawlers and LLM providers
+# Mirror of /.well-known/llms.txt for broader compatibility
+# See: https://llmstxt.org/
+
+version: 1.0
+site: https://laleorhon.com/
+owner: "A. Lale Orhon Baykal"
+contact: mailto:info@laleorhon.com
+languages: [tr, de, en]
+last_updated: 2025-09-03
+
+# Scope of content
+content:
+  type: website
+  scope: ["/"]
+  notes: |
+    This website provides professional information about a clinical psychologist
+    practicing in Berlin. Content is for informational purposes only and is not
+    medical advice.
+
+# Permissions for LLM usage
+permissions:
+  allow:
+    - crawling
+    - indexing
+    - summarization
+    - question_answering
+  disallow:
+    - training
+    - derivative_dataset_creation
+    - biometric_inference
+    - medical_diagnosis
+    - targeted_profiling
+    - advertising_generation
+
+# Attribution requirements
+attribution:
+  required: true
+  preferred_form: "Source: A. Lale Orhon Baykal (https://laleorhon.com/)"
+  linkback: https://laleorhon.com/
+
+# Licensing and rights
+licensing:
+  summary: |
+    Non-commercial use (e.g., indexing, summarization, QA) is permitted with
+    clear attribution. Any commercial use—including model training or dataset
+    creation—requires prior written permission from the owner.
+  copyright: "© 2025 A. Lale Orhon Baykal. All rights reserved."
+
+# Access guidelines for automated agents
+access:
+  rate_limit: "1 req/sec per agent"
+  request_window: "60s"
+  respectful_crawling: true
+
+# Known URLs (no sitemap available)
+urls:
+  - https://laleorhon.com/
+
+# API / datasets
+api: none
+datasets: none
+
+# Compliance notes
+notes: |
+  This llms.txt complements, but does not replace, robots.txt. Where conflicts
+  exist, both should be honored with the more restrictive rule prevailing. For
+  exemptions or partnership requests, contact the owner via the email above.

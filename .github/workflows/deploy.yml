@@ -1,10 +1,12 @@
-name: Deploy index.html to S3
+name: Deploy site to S3
 
 on:
   push:
     branches: [ main ]
     paths:
       - index.html
+      - llms.txt
+      - .well-known/**
       - .github/workflows/deploy.yml
   workflow_dispatch: {}
 
@@ -29,6 +31,20 @@ jobs:
         run: |
           aws s3 cp index.html s3://laleorhon.com/index.html \
             --content-type "text/html; charset=utf-8" \
+            --cache-control "no-cache" \
+            --acl public-read
+
+      - name: Upload llms.txt to S3 (root)
+        run: |
+          aws s3 cp llms.txt s3://laleorhon.com/llms.txt \
+            --content-type "text/plain; charset=utf-8" \
+            --cache-control "no-cache" \
+            --acl public-read
+
+      - name: Upload .well-known/llms.txt to S3
+        run: |
+          aws s3 cp .well-known/llms.txt s3://laleorhon.com/.well-known/llms.txt \
+            --content-type "text/plain; charset=utf-8" \
             --cache-control "no-cache" \
             --acl public-read
 
