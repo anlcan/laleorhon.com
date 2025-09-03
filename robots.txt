@@ -1,0 +1,10 @@
+# robots.txt for laleorhon.com
+# Generated on 2025-09-03 to improve SEO and protect sensitive paths
+
+User-agent: *
+Allow: /
+
+# Disallow sensitive or non-content paths/files
+Disallow: /scripts/
+
+Sitemap: https://laleorhon.com/sitemap.xml

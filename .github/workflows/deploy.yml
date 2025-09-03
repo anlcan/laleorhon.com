@@ -5,6 +5,8 @@ on:
     branches: [ main ]
     paths:
       - index.html
+      - robots.txt
+      - sitemap.xml
       - llms.txt
       - .well-known/**
       - .github/workflows/deploy.yml
@@ -45,6 +47,20 @@ jobs:
         run: |
           aws s3 cp .well-known/llms.txt s3://laleorhon.com/.well-known/llms.txt \
             --content-type "text/plain; charset=utf-8" \
+            --cache-control "no-cache" \
+            --acl public-read
+
+      - name: Upload robots.txt to S3
+        run: |
+          aws s3 cp robots.txt s3://laleorhon.com/robots.txt \
+            --content-type "text/plain; charset=utf-8" \
+            --cache-control "no-cache" \
+            --acl public-read
+
+      - name: Upload sitemap.xml to S3
+        run: |
+          aws s3 cp sitemap.xml s3://laleorhon.com/sitemap.xml \
+            --content-type "application/xml; charset=utf-8" \
             --cache-control "no-cache" \
             --acl public-read
 
