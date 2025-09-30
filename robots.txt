@@ -8,3 +8,5 @@ Allow: /
 Disallow: /scripts/
 
 Sitemap: https://laleorhon.com/sitemap.xml
+≠
+
